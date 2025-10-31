@@ -1,0 +1,432 @@
+
+@font-face {
+  font-family: 'Copperplate Gothic Bold';
+  src: url('/fonts/CopperplateGothicBold.ttf') format('truetype');
+}
+
+:root {
+    --black: #030303;
+    --green-glow: #00ff7f; 
+    --green-dark: #008a44;
+    --text-color: #e0e0e0;
+
+    --font-heading: 'Copperplate Gothic Bold', serif;
+    --font-body: 'EB Garamond', serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--black);
+    color: var(--text-color);
+    font-family: var(--font-body);
+    font-size: 18px;
+    line-height: 1.7;
+    
+    background-image: 
+        url('images/mobius.svg'),
+        linear-gradient(rgba(0, 138, 68, 0.1) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 138, 68, 0.1) 1px, transparent 1px);
+
+    background-repeat:
+        no-repeat,
+        repeat,
+        repeat;
+
+    background-position:
+        center center,
+        0 0,
+        0 0;
+
+    background-size:
+        600px auto, 
+        20px 20px,
+        20px 20px;
+
+    background-blend-mode:
+        normal, 
+        normal,
+        normal;
+
+    background-attachment: fixed;
+
+}
+
+
+
+/* typography */
+h1, h2, h3, h4 {
+    font-family: var(--font-heading);
+    color: var(--green-glow);
+    text-shadow: 0 0 5px var(--green-glow), 0 0 10px var(--green-glow), 0 0 15px var(--green-dark);
+    letter-spacing: 2px;
+    font-weight: 700;
+
+    background: linear-gradient(
+        90deg,
+        #00ff7f,
+        #66ff99,
+        #ffffff,
+        #00ffff,
+        #00ff7f
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+
+    text-shadow: 0 0 8px rgba(0, 255, 127, 0.3);
+}
+
+h1 { font-size: 4rem; text-align: center; }
+h2 { font-size: 2.5rem; }
+h3 { font-size: 2.2rem; margin-bottom: 1.5rem; text-align: center; }
+h4 { font-size: 1.8rem; }
+
+h3, h4 {
+    font-family: var(--font-subheading);
+    text-shadow: 0 0 8px var(--green-dark);
+}
+
+p, li {
+    font-family: var(--font-body);
+}
+
+a {
+    color: var(--green-glow);
+    text-decoration: none;
+}
+
+.rose {
+    display: block;
+    margin: 1.0rem auto;
+    max-width: 80px;
+}
+
+.content-section {
+    margin-bottom: 4rem;
+}
+
+
+/* header, nav */
+.header {
+  position: relative;
+  padding-top: 3rem;
+  text-align: center;
+}
+
+.alpha {
+  display: inline-block;
+  position: relative;
+  margin-top: 1.5rem auto 0 auto;
+  text-decoration: none;
+  cursor: pointer;
+  font-family: 'Copperplate Gothic Bold', serif;
+}
+
+.alpha span {
+  font-size: 1.5rem;
+  background: linear-gradient(
+    90deg,
+    #00ff7f,
+    #66ff99,
+    #ffffff,
+    #00ffff,
+    #00ff7f
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  transition: all 0.4s ease;
+}
+
+.alpha span:hover {
+  filter: brightness(1.5);
+  text-shadow:
+    0 0 10px #00ff7f,
+    0 0 20px #00ffcc,
+    0 0 30px #66ff99;
+}
+
+.alpha::before,
+.alpha::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 550px;
+  height: 2px;
+  background: var(--green-dark);
+  transform: translateY(-50%);
+}
+
+.alpha::before {
+  right: 100%;
+  margin-right: 20px;
+}
+
+.alpha::after {
+  left: 100%;
+  margin-left: 20px;
+}
+
+.nav {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 1rem;
+    font-family: var(--font-heading);
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+}
+
+.nav a {
+    text-decoration: none;
+    color: white;
+    position: relative;
+    transition: color 0.2s ease;
+}
+
+.nav a:hover {
+  background: linear-gradient(
+    90deg,
+    #00ff7f,
+        #66ff99,
+        #56d9f0,
+        #00ffff,
+        #00ff7f
+  );
+  background-size: 400%;
+  background-clip: text;
+  color: transparent;
+  animation: kaleidoscope 3s linear infinite;
+}
+
+@keyframes kaleidoscope {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 400% 50%; }
+}
+
+/* self-intro */
+.self-intro {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 4rem 0;
+}
+
+.self-intro h2 {
+    margin-bottom: 2rem;
+}
+
+.photos {
+    display: flex;
+    gap: 8rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.photo-r {
+    width: 550px;
+    height: 600px;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+.photo-f {
+    width: 300px;
+    height: 600px;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+.p-unit {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.db {
+    margin-top: 2rem;
+    font-size: 1.1rem;
+    color: var(--text-color);
+    max-width: 400px;
+    border-left: 3px solid var(--green-dark);
+    padding-left: 1rem;
+}
+
+.db p {
+    margin-bottom: 1rem;
+}
+
+/* afqotd, nicknames */
+.afqotd, .nicknames {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 4rem 0;
+}
+
+.afqotd h2:hover {
+    filter: brightness(1.0);
+    text-shadow:
+        0 0 5px #00ff7f,
+        0 0 10px #00ffcc,
+        0 0 15px #66ff99;
+}
+
+.quotes, .yas-nicknames {
+    padding-left: 4rem;
+    padding-right: 2rem;
+    margin-top: 2rem;
+}
+
+.quote, .yas-nickname {
+    border-left: 4px solid var(--green-dark);
+    padding-left: 2rem;
+    margin-left: 2rem;
+    max-width: 1000px;
+    color: var(--text-color);
+    line-height: 1.7;
+}
+
+.quote p, .yas-nickname p {
+    margin-bottom: 1rem;
+}
+
+
+/* faellin */
+.faellin {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 4rem 0;
+    margin-bottom: 0;
+}
+
+/* for-yas */
+.for-yas {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 4rem 0;
+    margin-bottom: 0;
+}
+
+/* media */
+.media {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 4rem 0;
+    margin-bottom: 0;
+}
+
+.media-links {
+    margin-top: 1rem;
+    padding: 2rem;
+}
+
+.media-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+}
+
+.media-item {
+    background: transparent;
+    border-radius: 1rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    padding: 1.5rem;
+    text-align: center;
+}
+
+
+.media-item img {
+    width: 100%;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.media-item h3 {
+    font-family: 'EB Garamond', serif;
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+}
+
+/* art gallery */
+.artgallery {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 4rem 0;
+    margin-bottom: 0;
+}
+
+/* sky gallery */
+.skygallery {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 4rem 0;
+    margin-bottom: 0;
+}   
+
+
+
+/* footer */
+.footer {
+    padding: 2rem 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+.footer {
+    text-align: center;
+    border-top: 2px solid var(--green-dark);
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+
+.omega {
+    background: linear-gradient(
+        90deg,
+        #00ff7f,
+        #66ff99,
+        #ffffff,
+        #00ffff,
+        #00ff7f
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+
+    text-shadow: 0 0 8px rgba(0, 255, 127, 0.3);
+}
+
+.omega:hover {
+  filter: brightness(1.5);
+  text-shadow:
+    0 0 5px #00ff7f,
+    0 0 10px #00ffcc,
+    0 0 20px #66ff99;
+}
+
+.heart {
+  color: #e32525;
+}
