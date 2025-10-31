@@ -351,7 +351,6 @@ a {
     text-align: center;
 }
 
-
 .media-item img {
     width: 100%;
     border-radius: 0.5rem;
@@ -371,7 +370,7 @@ a {
     justify-content: center;
     align-items: center;
     margin: 4rem 0;
-    margin-bottom: 0;
+    margin-bottom: 2rem;
 }
 
 /* sky gallery */
@@ -381,7 +380,7 @@ a {
     justify-content: center;
     align-items: center;
     margin: 4rem 0;
-    margin-bottom: 0;
+    margin-bottom: 2rem;
 }   
 
 
